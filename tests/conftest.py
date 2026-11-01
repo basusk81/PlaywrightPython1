@@ -23,4 +23,4 @@ def api_context(playwright: Playwright) -> APIRequestContext:
     yield context
 
     context.dispose()
-  # Set a timeout of 60 seconds
+   Timeout of 60 seconds
