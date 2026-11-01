@@ -22,10 +22,5 @@
 
 #     yield context
 
-<<<<<<< HEAD
-    context.dispose()
-   Timeout of 60 seconds
-=======
 #     context.dispose()
 #   # Set a timeout of 60 seconds
->>>>>>> 18e16306d6f18bc29d7c340e510ee985c6accd9c
