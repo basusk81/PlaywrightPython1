@@ -10,7 +10,7 @@ def test_bing_search():
     
         page.goto("https://www.bing.com")
         page.wait_for_timeout(2000)
-        #expect(page).to_have_title(re.compile("Bing"))
+        expect(page).to_have_title(re.compile("Bing"))
 
         #page.get_by_role("combobox", name="q").click()
         #page.get_attribute("name", "q").click()
