@@ -1,14 +1,33 @@
 import re
 from playwright.sync_api import Page, expect
 
+import yaml
+
+with open("config/user.yaml", "r") as file:
+       user_data = yaml.safe_load(file)
+       print(user_data)
 
 def test_example(page: Page) -> None:
     page.goto("https://demowebshop.tricentis.com/")
+
+    #print(user_data["test_env"]["username"])
+    #print(user_data["test_env"]["password"])
+    print("Test Started")
+
+
+    username= user_data["test_env"]["username"]
+    password= user_data["test_env"]["password"]
+
+    print("Username:", username)
+    print("Password:", password)
+
+   
     page.get_by_role("link", name="Log in").click()
     page.get_by_role("textbox", name="Email:").click()
-    page.get_by_role("textbox", name="Email:").fill("saurabhkbasu@hotmail.com")
+    page.get_by_role("textbox", name="Email:").fill(username)
+    page.wait_for_timeout(3000)
     page.get_by_role("textbox", name="Password:").click()
-    page.get_by_role("textbox", name="Password:").fill("password123")
+    page.get_by_role("textbox", name="Password:").fill(password)
     page.get_by_role("button", name="Log in").click()
     page.get_by_role("link", name="Apparel & Shoes").first.click()
     page.get_by_role("link", name="Casual Golf Belt", exact=True).click()
