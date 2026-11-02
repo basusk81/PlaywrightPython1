@@ -1,5 +1,5 @@
 import re
-from conftest import page
+#from conftest import page
 from playwright.sync_api import expect, sync_playwright
 
 def test_google_search():
@@ -25,9 +25,3 @@ try:
         page.get_by_role("button", name="Accept all").click(timeout=5000)
 except:
         print("No Pop up Found")
-
-
-
-
-
-

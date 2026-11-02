@@ -22,7 +22,8 @@ def test_bing_search():
        #expect(page).to_have_title(re.compile("Playwright Python",re.IGNORECASE))
 
 try:
-        page.get_by_role("button", name="Accept all").click(timeout=5000)
+   expect(page).to_have_title(re.compile("Playwright Python",re.IGNORECASE))
+   #page.get_by_role("button", name="Accept all").click(timeout=5000)
 except:
         print("No Pop up Found")
 
